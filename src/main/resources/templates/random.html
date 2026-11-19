@@ -6,6 +6,8 @@
 </head>
 <body>
     <h2>추천 노래</h2>
-    <p th:text="${song}">Cosmic Echo</p>
+    <p>제목: <span th:text="${song.title}">Cosmic Echo</span></p>
+    <p>가수: <span th:text="${song.singer}">Nova</span></p>
+    <p>평점: <span th:text="${song.rating}">5</span></p>
 </body>
 </html>
