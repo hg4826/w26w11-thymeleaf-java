@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Thymeleaf</title>
 </head>
 <body>
     <h2>추천 노래</h2>
-    <p>Cosmic Echo</p>
+    <p th:text="${song}">Cosmic Echo</p>
 </body>
 </html>
