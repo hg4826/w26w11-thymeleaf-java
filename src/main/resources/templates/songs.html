@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+    <h2>노래 목록</h2>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>가수</th>
+            <th>평점</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="song, stat : ${songs}">
+            <td th:text="${stat.count}">1</td>
+            <td th:text="${song.title}">Cosmic Echo</td>
+            <td th:text="${song.singer}">Nova</td>
+            <td th:text="${song.rating}">5</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
