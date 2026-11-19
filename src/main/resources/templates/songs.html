@@ -2,27 +2,32 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thymeleaf</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <h2>노래 목록</h2>
-    <table border="1">
-        <thead>
-        <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>가수</th>
-            <th>평점</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="song, stat : ${songs}">
-            <td th:text="${stat.count}">1</td>
-            <td th:text="${song.title}">Cosmic Echo</td>
-            <td th:text="${song.singer}">Nova</td>
-            <td th:text="${song.rating}">5</td>
-        </tr>
-        </tbody>
-    </table>
+<body class="min-h-screen bg-slate-100 p-8">
+    <div class="mx-auto max-w-2xl">
+        <h2 class="mb-6 text-2xl font-bold text-indigo-600">노래 목록</h2>
+        <table class="w-full overflow-hidden rounded-xl bg-white shadow-lg">
+            <thead class="bg-indigo-600 text-white">
+            <tr>
+                <th class="px-4 py-3 text-left">번호</th>
+                <th class="px-4 py-3 text-left">제목</th>
+                <th class="px-4 py-3 text-left">가수</th>
+                <th class="px-4 py-3 text-left">평점</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="border-b border-slate-200 hover:bg-indigo-50" th:each="song, stat : ${songs}">
+                <td class="px-4 py-3 text-slate-500" th:text="${stat.count}">1</td>
+                <td class="px-4 py-3 font-semibold text-slate-900" th:text="${song.title}">Cosmic Echo</td>
+                <td class="px-4 py-3 text-slate-700" th:text="${song.singer}">Nova</td>
+                <td class="px-4 py-3 text-amber-500" th:text="${song.rating}">5</td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="/songs/random" class="mt-6 inline-block text-sm text-indigo-500 hover:underline">랜덤 추천 받기 →</a>
+    </div>
 </body>
 </html>
